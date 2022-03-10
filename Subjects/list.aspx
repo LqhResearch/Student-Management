@@ -4,14 +4,14 @@
     <title>Danh sách môn học</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h3 class="text-danger text-center">Danh sách môn học</h3>
+    <h3 class="text-danger text-center pb-3">Danh sách môn học</h3>
     <table class="table table-bordered table-hover">
-        <thead class="bg-teal">
+        <thead class="bg-info">
             <tr>
-                <td>Mã môn học</td>
-                <td>Tên môn học</td>
-                <td>Số tiết</td>
-                <td>Học phí</td>
+                <th>Mã môn học</th>
+                <th>Tên môn học</th>
+                <th>Số tiết</th>
+                <th>Học phí</th>
             </tr>
         </thead>
         <tbody>

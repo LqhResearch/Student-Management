@@ -4,23 +4,22 @@
     <title>Danh sách phân công</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h3 class="text-danger text-center">Danh sách phân công</h3>
+    <h3 class="text-danger text-center pb-3">Danh sách phân công</h3>
     <div class="clear-fix">
         <div class="float-end">
             <div class="input-group mb-3">
-                <asp:TextBox ID="txtSearch" CssClass="form-control" runat="server"></asp:TextBox>
-                <asp:Button ID="btnSearch" CssClass="btn btn-primary" runat="server" Text="Tìm kiếm" OnClick="btnSearch_Click" />
+                <asp:TextBox ID="txtSearch" CssClass="form-control" Placeholder="Word" runat="server"></asp:TextBox>
+                <asp:Button ID="btnSearch" CssClass="btn btn-primary fa" Text="&#xf002;" runat="server" OnClick="btnSearch_Click" />
             </div>
         </div>
     </div>
     <table class="table table-bordered table-hover">
-        <thead class="bg-teal">
+        <thead class="bg-info">
             <tr>
-                <td>Giáo viên</td>
-                <td>Môn học</td>
-                <td>Ghi chú</td>
-                <td width="69">Sửa</td>
-                <td width="69">Xoá</td>
+                <th>Giáo viên</th>
+                <th>Môn học</th>
+                <th>Ghi chú</th>
+                <th width="104">Công cụ</th>
             </tr>
         </thead>
         <tbody>
@@ -31,10 +30,8 @@
                         <td><%# Eval("TenMH") %></td>
                         <td><%# Eval("GhiChu") %></td>
                         <td>
-                            <asp:HyperLink ID="hplEdit" NavigateUrl='<%# "edit.aspx?MaGV="+ Eval("MaGV") + "&MaMH="+Eval("MaMH") %>' CssClass="btn btn-warning" runat="server">Sửa</asp:HyperLink>
-                        </td>
-                        <td>
-                            <asp:HyperLink ID="hplDelete" NavigateUrl='<%# "?del-MaGV="+ Eval("MaGV") + "&del-MaMH="+Eval("MaMH") %>' CssClass="btn btn-danger" runat="server">Xoá</asp:HyperLink>
+                            <asp:HyperLink ID="hplEdit" NavigateUrl='<%# "edit.aspx?MaGV="+ Eval("MaGV") + "&MaMH="+Eval("MaMH") %>' CssClass="btn btn-warning" ToolTip="Sửa" runat="server"><i class="fas fa-pen"></i></asp:HyperLink>
+                            <asp:HyperLink ID="hplDelete" NavigateUrl='<%# "?del-MaGV="+ Eval("MaGV") + "&del-MaMH="+Eval("MaMH") %>' CssClass="btn btn-danger" ToolTip="Xoá" runat="server"><i class="fas fa-trash-alt"></i></asp:HyperLink>
                         </td>
                     </tr>
                 </ItemTemplate>

@@ -7,6 +7,8 @@ namespace Student_Management.Assignments
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Convert.ToBoolean(Session["login"]))
+                Response.Redirect("/Default.aspx");
             if (!IsPostBack)
             {
                 string sql = @"SELECT tblGiaoVien.MaGV, tblMonHoc.MaMH, HoGV+' '+TenGV as Fullname, TenMH, GhiChu 

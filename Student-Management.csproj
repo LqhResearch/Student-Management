@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\style.css" />
     <Content Include="Assignments\add.aspx" />
     <Content Include="Assignments\edit.aspx" />
     <Content Include="Assignments\list.aspx" />

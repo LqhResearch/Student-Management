@@ -21,5 +21,5 @@
             <asp:TextBox ID="txtEmail" TextMode="Email" CssClass="form-control" runat="server"></asp:TextBox>
         </div>
     </div>
-    <asp:Button ID="btnSignUp" CssClass="btn btn-outline-danger" runat="server" Text="Đăng ký" OnClick="btnSignUp_Click" />
+    <asp:Button ID="btnSignUp" CssClass="btn btn-outline-primary" runat="server" Text="Đăng ký" OnClick="btnSignUp_Click" />
 </asp:Content>

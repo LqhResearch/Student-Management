@@ -6,6 +6,8 @@ namespace Student_Management.Assignments
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Convert.ToBoolean(Session["login"]))
+                Response.Redirect("/Default.aspx");
             if (!IsPostBack)
             {
                 ddlTeacherID.DataSource = ConnectDB.GetTable("SELECT *, HoGV+' '+TenGV as Fullname FROM tblGiaoVien");

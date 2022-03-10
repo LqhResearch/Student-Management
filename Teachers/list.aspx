@@ -3,16 +3,16 @@
     <title>Danh sách giáo viên</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h3 class="text-danger text-center">Danh sách môn học</h3>
+    <h3 class="text-danger text-center pb-3">Danh sách giáo viên</h3>
     <table class="table table-bordered table-hover">
-        <thead class="bg-teal">
+        <thead class="bg-info">
             <tr>
-                <td>Mã giáo viên</td>
-                <td>Họ giáo viên</td>
-                <td>Tên giáo viên</td>
-                <td>Giới tính</td>
-                <td>Địa chỉ</td>
-                <td>Số điện thoại</td>
+                <th>Mã giáo viên</th>
+                <th>Họ giáo viên</th>
+                <th>Tên giáo viên</th>
+                <th>Giới tính</th>
+                <th>Địa chỉ</th>
+                <th>Số điện thoại</th>
             </tr>
         </thead>
         <tbody>

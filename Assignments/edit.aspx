@@ -3,7 +3,7 @@
     <title>Sửa phân công</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h3 class="text-danger text-center">Thêm phân công</h3>
+    <h3 class="text-danger text-center pb-3">Thêm phân công</h3>
     <div class="row">
         <div class="col-md-6 mb-3">
             <label class="form-label">Giáo viên</label>
@@ -20,5 +20,5 @@
             <asp:TextBox ID="txtNote" CssClass="form-control" runat="server"></asp:TextBox>
         </div>
     </div>
-    <asp:Button ID="btnEdit" CssClass="btn btn-outline-danger" runat="server" Text="Sửa" OnClick="btnEdit_Click" />
+    <asp:Button ID="btnEdit" CssClass="btn btn-outline-primary" runat="server" Text="Sửa" OnClick="btnEdit_Click" />
 </asp:Content>

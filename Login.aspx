@@ -15,5 +15,5 @@
             <asp:TextBox ID="txtPassword" TextMode="Password" CssClass="form-control" runat="server"></asp:TextBox>
         </div>
     </div>
-    <asp:Button ID="btnLogin" CssClass="btn btn-outline-danger" runat="server" Text="Đăng nhập" OnClick="btnLogin_Click" />
+    <asp:Button ID="btnLogin" CssClass="btn btn-outline-primary" runat="server" Text="Đăng nhập" OnClick="btnLogin_Click" />
 </asp:Content>
