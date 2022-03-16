@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Frame.Master" AutoEventWireup="true" CodeBehind="edit.aspx.cs" Inherits="Student_Management.Assignments.edit" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>Sửa phân công</title>
 </asp:Content>
@@ -20,5 +21,5 @@
             <asp:TextBox ID="txtNote" CssClass="form-control" runat="server"></asp:TextBox>
         </div>
     </div>
-    <asp:Button ID="btnEdit" CssClass="btn btn-outline-primary" runat="server" Text="Sửa" OnClick="btnEdit_Click" />
+    <asp:Button ID="btnEdit" CssClass="btn btn-primary" runat="server" Text="Sửa" OnClick="btnEdit_Click" />
 </asp:Content>

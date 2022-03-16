@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Student_Management.Subjects
+namespace Student_Management.Users
 {
     public partial class list : System.Web.UI.Page
     {
@@ -8,7 +8,7 @@ namespace Student_Management.Subjects
         {
             if (!IsPostBack)
             {
-                rptList.DataSource = ConnectDB.GetTable("SELECT * FROM tblMonHoc");
+                rptList.DataSource = ConnectDB.GetTable("SELECT * FROM tblUser EXCEPT SELECT * FROM tblUser WHERE Username = N'" + Session["Username"] + "'");
                 rptList.DataBind();
             }
         }

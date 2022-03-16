@@ -18,7 +18,7 @@ namespace Student_Management.Assignments
                     ConnectDB.Execute(sql);
                 }
 
-                sql = @"SELECT tblGiaoVien.MaGV, tblMonHoc.MaMH, HoGV+' '+TenGV as Fullname, TenMH, GhiChu 
+                sql = @"SELECT tblGiaoVien.MaGV, tblMonHoc.MaMH, HoGV + ' ' + TenGV as Fullname, TenMH, GhiChu 
                         FROM tblGiaoVien, tblPhanCong, tblMonHoc 
                         WHERE tblGiaoVien.MaGV = tblPhanCong.MaGV 
                         AND tblPhanCong.MaMH = tblMonHoc.MaMH";
@@ -29,7 +29,7 @@ namespace Student_Management.Assignments
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            string sql = @"SELECT tblGiaoVien.MaGV, tblMonHoc.MaMH, HoGV+' '+TenGV as Fullname, TenMH, GhiChu 
+            string sql = @"SELECT tblGiaoVien.MaGV, tblMonHoc.MaMH, HoGV + ' ' + TenGV as Fullname, TenMH, GhiChu 
                         FROM tblGiaoVien, tblPhanCong, tblMonHoc 
                         WHERE tblGiaoVien.MaGV = tblPhanCong.MaGV 
                         AND tblPhanCong.MaMH = tblMonHoc.MaMH

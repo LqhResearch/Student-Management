@@ -11,12 +11,13 @@ namespace Student_Management.Assignments
                 Response.Redirect("/Default.aspx");
             if (!IsPostBack)
             {
-                string sql = @"SELECT tblGiaoVien.MaGV, tblMonHoc.MaMH, HoGV+' '+TenGV as Fullname, TenMH, GhiChu 
+                string sql = @"SELECT tblGiaoVien.MaGV, tblMonHoc.MaMH, HoGV + ' ' + TenGV as Fullname, TenMH, GhiChu 
                             FROM tblGiaoVien, tblPhanCong, tblMonHoc 
                             WHERE tblGiaoVien.MaGV = tblPhanCong.MaGV 
                             AND tblPhanCong.MaMH = tblMonHoc.MaMH
                             AND tblPhanCong.MaGV = '" + Request.QueryString["MaGV"] + @"'
                             AND tblPhanCong.MaMH = '" + Request.QueryString["MaMH"] + @"'";
+
                 DataRow row = ConnectDB.GetTable(sql).Rows[0];
                 txtTeacher.Text = row["Fullname"].ToString();
                 txtSubject.Text = row["MaMH"].ToString();
@@ -28,7 +29,7 @@ namespace Student_Management.Assignments
         {
             string sql = "UPDATE tblPhanCong SET GhiChu=N'" + txtNote.Text + "' WHERE MaGV='" + Request.QueryString["MaGV"] + "' AND MaMH='" + Request.QueryString["MaMH"] + "'";
             ConnectDB.Execute(sql);
-            Response.Redirect("list.aspx");
+            Response.Redirect("/Assignments/list.aspx");
         }
     }
 }

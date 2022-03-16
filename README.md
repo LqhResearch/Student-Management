@@ -22,3 +22,6 @@ Thực hành môn Chuyên đề ASP.NET
   - Sửa
   - Xoá
   - Tìm kiếm (Ghi chú)
+- Phân công
+  - Xem danh sách
+  - Sửa (quyền truy cập và trạng thái)

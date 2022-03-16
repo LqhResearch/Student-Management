@@ -10,7 +10,7 @@ namespace Student_Management.Assignments
                 Response.Redirect("/Default.aspx");
             if (!IsPostBack)
             {
-                ddlTeacherID.DataSource = ConnectDB.GetTable("SELECT *, HoGV+' '+TenGV as Fullname FROM tblGiaoVien");
+                ddlTeacherID.DataSource = ConnectDB.GetTable("SELECT *, HoGV + ' ' + TenGV as Fullname FROM tblGiaoVien");
                 ddlTeacherID.DataTextField = "Fullname";
                 ddlTeacherID.DataValueField = "MaGV";
                 ddlTeacherID.DataBind();
@@ -26,6 +26,7 @@ namespace Student_Management.Assignments
         {
             string sql = @"INSERT INTO tblPhanCong VALUES ('" + ddlTeacherID.SelectedValue + "', '" + ddlSubjectID.SelectedValue + "', N'" + txtNote.Text + "')";
             ConnectDB.Execute(sql);
+            Response.Redirect("/Assignments/list.aspx");
         }
     }
 }

@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.IO;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace Student_Management
 {
@@ -23,8 +20,44 @@ namespace Student_Management
         [Obsolete]
         protected void btnSignUp_Click(object sender, EventArgs e)
         {
-            string sql = @"INSERT INTO tblUser VALUES ('" + txtUsername.Text + "', '" + EncodeSHA1(txtPassword.Text) + "', '" + txtEmail.Text + "')";
-            ConnectDB.Execute(sql);
+            if (txtPassword.Text == txtPassword2.Text)
+            {
+                string sql = "INSERT INTO tblUser VALUES (N'" + txtUsername.Text + "', N'" + EncodeSHA1(txtPassword.Text) + "', 1, 0, 'uploads/" + fAvatar.FileName + "')";
+                ConnectDB.Execute(sql);
+                lblMessage.Text = @"<div class='alert alert-info' role='alert'>Đăng ký thành công</div>";
+            }
+            else lblMessage.Text = @"<div class='alert alert-info' role='alert'>Mật khẩu không khớp</div>";
         }
+
+        #region Xử lý tải ảnh lên
+        private bool CheckFileType(string fileName)
+        {
+            string ext = Path.GetExtension(fileName);
+            switch (ext.ToLower())
+            {
+                case ".gif":
+                    return true;
+                case ".png":
+                    return true;
+                case ".jpg":
+                    return true;
+                case ".jpeg":
+                    return true;
+                default:
+                    return false;
+            }
+        }
+
+        protected void btnAvatar_Click(object sender, EventArgs e)
+        {
+            if (Page.IsValid && fAvatar.HasFile && CheckFileType(fAvatar.FileName))
+            {
+                string fileName = "uploads/" + fAvatar.FileName;
+                string filePath = MapPath(fileName);
+                fAvatar.SaveAs(filePath);
+                imgAvatar.ImageUrl = fileName;
+            }
+        }
+        #endregion
     }
 }

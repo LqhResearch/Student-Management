@@ -30,11 +30,57 @@
             <li class="nav-item">
                 <a class="nav-link" href="/Subjects/list.aspx">Danh sách môn học</a>
             </li>
-            <%=ShowLoginFeaturesHTML() %>
+            <% if (Convert.ToBoolean(Session["login"]))
+                { %>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Phân công
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="/Assignments/add.aspx">Thêm phân công</a></li>
+                    <li><a class="dropdown-item" href="/Assignments/list.aspx">Danh sách phân công</a></li>
+
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Người dùng
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="/Users/list.aspx">Danh sách người dùng</a></li>
+
+                </ul>
+            </li>
+            <% } %>
         </ul>
 
         <ul class="navbar-nav">
-            <%=ShowLoginHTML() %>
+            <% if (Convert.ToBoolean(Session["login"]))
+                { %>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="../<%=Session["Avatar"] %>" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                    <%=Session["Username"] %>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="/Users/info.aspx">Thông tin tài khoản</a></li>
+                    <li><a class="dropdown-item" href="/Logout.aspx">Đăng xuất</a></li>
+                </ul>
+            </li>
+            <% }
+                else
+                { %>
+            <li class="nav-item">
+                <a class="nav-link" href="/SignUp.aspx">
+                    <i class="fas fa-sign-in-alt"></i>
+                    Đăng ký
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/Login.aspx">
+                    <i class="fas fa-user-circle"></i>
+                    Đăng nhập
+                </a>
+            </li>
+            <% } %>
         </ul>
     </nav>
 
@@ -80,7 +126,7 @@
             <p><i>Thực hành môn Chuyên đề ASP.NET</i></p>
         </div>
         <div>
-            <p class="mb-0">&copy; 03-2022 Quốc Hưng</p>
+            <p class="mb-0">&copy; 2022 Quốc Hưng</p>
         </div>
     </footer>
 

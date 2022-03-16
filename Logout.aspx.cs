@@ -8,7 +8,7 @@ namespace Student_Management
         {
             if (!IsPostBack)
             {
-                Session["login"] = false;
+                Session.Clear();
                 Response.Redirect("/Login.aspx");
             }
         }

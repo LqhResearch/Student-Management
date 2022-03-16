@@ -21,5 +21,5 @@
             <asp:TextBox ID="txtNote" CssClass="form-control" runat="server"></asp:TextBox>
         </div>
     </div>
-    <asp:Button ID="btnAdd" CssClass="btn btn-outline-primary" runat="server" Text="Thêm" OnClick="btnAdd_Click" />
+    <asp:Button ID="btnAdd" CssClass="btn btn-primary" runat="server" Text="Thêm" OnClick="btnAdd_Click" />
 </asp:Content>
